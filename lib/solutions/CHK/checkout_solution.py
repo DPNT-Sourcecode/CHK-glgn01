@@ -57,7 +57,7 @@ def checkout(skus):
                         result += (res * price)
                 table[i] = res
 
-        print(result)
+        print(divmod(1, 5))
 
         # elif i == 'E':
         #     mul, res = divmod(table[i], 2)
@@ -83,10 +83,3 @@ print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
 # - {"method": "checkout", "params": ["AAAAAA"], "id": "CHK_R2_018"}, expected: 250, got: 260
 # - {"method": "checkout", "params": ["AAAAAAA"], "id": "CHK_R2_019"}, expected: 300, got: 310
 #
-
-
-
-
-
-
-
