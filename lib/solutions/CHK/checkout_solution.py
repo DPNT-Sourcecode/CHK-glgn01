@@ -28,7 +28,6 @@ def checkout(skus):
         'A': 50, 'AAA' : 130, 'B': 30, 'BB' : 45, 'C': 20, 'D': 15, 'E': 40
     }
 
-
     if not isinstance(skus, str) or not skus.isupper():
         return -1
 
@@ -54,8 +53,13 @@ def checkout(skus):
 
         elif i == 'E':
             mul, res = divmod(table[i], 2)
+
             if mul > 0:
-                table['B'] -= (mul // 2)
+                cal = table['B'] - mul
+                if  cal >= 0:
+                    table['B'] = cal
+                else:
+                    table['B'] = 0
 
             if res > 0:
                 result += (res * hashtable[i])
@@ -66,7 +70,8 @@ def checkout(skus):
     return result
 
 
-print(checkout('ABCDDEEE'))
+print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
+
 
 
 

@@ -10,3 +10,5 @@ class TestCHK():
         assert checkout_solution.checkout('AAAAAAABBCCD') == 410
         assert checkout_solution.checkout(334) == -1
         assert checkout_solution.checkout('ABBCNNDKK') == -1
+        assert checkout_solution.checkout('ABBBBBBCDDEEEEEEEEEEEE') == 100
+
