@@ -4,15 +4,15 @@ import collections
 # skus = unicode string
 
 '''
-+------+-------+----------------+
-| Item | Price | Special offers |
-+------+-------+----------------+
-| A    | 50    | 3A for 130     |
-| B    | 30    | 2B for 45      |
-| C    | 20    |                |
-| D    | 15    |                |
-E    | 40    | 2E get one B free  
-+------+-------+----------------+
++------+-------+------------------------+
+| Item | Price | Special offers         |
++------+-------+------------------------+
+| A    | 50    | 3A for 130, 5A for 200 |
+| B    | 30    | 2B for 45              |
+| C    | 20    |                        |
+| D    | 15    |                        |
+| E    | 40    | 2E get one B free      |
++------+-------+------------------------+
 '''
 
 def checkout(skus):
@@ -25,7 +25,7 @@ def checkout(skus):
     result = 0
 
     hashtable = {
-        'A': 50, 'AAA' : 130, 'B': 30, 'BB' : 45, 'C': 20, 'D': 15, 'E': 40
+        'A': 50, 'AAA' : 130, 'AAAAA' : 200,'B': 30, 'BB' : 45, 'C': 20, 'D': 15, 'E': 40
     }
 
     if not isinstance(skus, str) or not skus.isupper():
@@ -70,6 +70,11 @@ def checkout(skus):
 
 
 print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
+
+- {"method": "checkout", "params": ["AAAAA"], "id": "CHK_R2_017"}, expected: 200, got: 230
+- {"method": "checkout", "params": ["AAAAAA"], "id": "CHK_R2_018"}, expected: 250, got: 260
+- {"method": "checkout", "params": ["AAAAAAA"], "id": "CHK_R2_019"}, expected: 300, got: 310
+
 
 
 
