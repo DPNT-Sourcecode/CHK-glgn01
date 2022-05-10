@@ -114,5 +114,9 @@ def checkout(skus):
                 new_event_sum = 0
 
     return result
-
+ # - {"method":"checkout","params":["SSSZ"],"id":"CHK_R5_142"}, expected: 65, got: 66
+ # - {"method":"checkout","params":["ZZZS"],"id":"CHK_R5_144"}, expected: 65, got: 66
+ # - {"method":"checkout","params":["STXZ"],"id":"CHK_R5_146"}, expected: 62, got: 66
+# new_event_targets = {'S', 'T', 'X', 'Y', 'Z'}
 # print(checkout('FFFXXXXYZZZZZTTSS'))
+
