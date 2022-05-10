@@ -9,7 +9,7 @@ class TestCHK():
         assert checkout_solution.checkout('Ab6c*') == -1
         assert checkout_solution.checkout('AAAAAAABBCCD') == 400
         assert checkout_solution.checkout(334) == -1
-        assert checkout_solution.checkout('ABBCNNDKK') == -1
+        assert checkout_solution.checkout('ABBCNNDKK') == 360
         assert checkout_solution.checkout('ABBBBBBCDDEEEEEEEEEEEE') == 580
         assert checkout_solution.checkout('EE') == 80
         assert checkout_solution.checkout('EEB') == 80
@@ -36,4 +36,6 @@ class TestCHK():
         assert checkout_solution.checkout("FF")==20
         assert checkout_solution.checkout("FFF")== 20
         assert checkout_solution.checkout("FFFF")== 30
-        assert checkout_solution.checkout("FFFFFF")== 40
+        assert checkout_solution.checkout("AABBDLKLLNHGGGGFFFBVVVVV")== 910
+
+

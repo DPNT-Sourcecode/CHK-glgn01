@@ -59,7 +59,7 @@ def checkout(skus):
 
     table = collections.Counter(skus)
 
-    print(table)
+    # print(table)
     for i in sorted(table)[::-1]:
         if ord(i) not in ascii_check:
             return -1
@@ -87,7 +87,8 @@ def checkout(skus):
     return result
 
 
-print(checkout('AABBDLKLLNHGGGGFFFBVVVVV'))
+# print(checkout('ABBCNNDKK'))
+
 
 
 
