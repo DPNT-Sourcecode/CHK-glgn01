@@ -101,7 +101,7 @@ def checkout(skus):
         new_event_sum -= ((new_event_sum // 3) * 3)
 
         for i in new_event_table:
-            print(new_event_sum)
+
             if new_event_sum == 0:
                 return result
             cnt, price = hashtable[i][0]
@@ -115,10 +115,4 @@ def checkout(skus):
 
     return result
 
-print(checkout('FFFXXXXYZZZZZTTSS'))
-
-
-
-
-
-
+# print(checkout('FFFXXXXYZZZZZTTSS'))
