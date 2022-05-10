@@ -13,6 +13,26 @@ import collections
 | D    | 15    |                        |
 | E    | 40    | 2E get one B free      |
 | F    | 10    | 2F get one F free      |
+| G    | 20    |                        |
+| H    | 10    | 5H for 45, 10H for 80  |
+| I    | 35    |                        |
+| J    | 60    |                        |
+| K    | 80    | 2K for 150             |
+| L    | 90    |                        |
+| M    | 15    |                        |
+| N    | 40    | 3N get one M free      |
+| O    | 10    |                        |
+| P    | 50    | 5P for 200             |
+| Q    | 30    | 3Q for 80              |
+| R    | 50    | 3R get one Q free      |
+| S    | 30    |                        |
+| T    | 20    |                        |
+| U    | 40    | 3U get one U free      |
+| V    | 50    | 2V for 90, 3V for 130  |
+| W    | 20    |                        |
+| X    | 90    |                        |
+| Y    | 10    |                        |
+| Z    | 50    |                        |
 +------+-------+------------------------+
 '''
 
@@ -26,9 +46,9 @@ def checkout(skus):
     result = 0
 
     hashtable = {
-        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40), (2, -5)], 'F' : [(1, 10), (2, -1)]
+        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40), (2, -25)], 'F' : [(1, 10), (2, -21)]
     }
-    place = ['A','B','C','D','E','F']
+    place = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
     if not isinstance(skus, str) or not skus.isupper():
         return -1
@@ -63,5 +83,6 @@ def checkout(skus):
 
 
 # print(checkout('FFFF'))
+
 
 
