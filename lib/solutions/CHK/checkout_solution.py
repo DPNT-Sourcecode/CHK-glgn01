@@ -41,19 +41,24 @@ def checkout(skus):
     if skus == '':
         return 0
 
-    ascii_check = range(65, 71)
+    ascii_check = range(65, 115)
 
     result = 0
 
     hashtable = {
-        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40), (2, -25)], 'F' : [(1, 10), (2, -21)]
-    }
+        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40), (2, -25)], 'F' : [(1, 10), (2, -21)],
+        'G' : [(1, 20)], 'H' : [(1, 10), (5, 45), (10, 80)], 'I' : [(1, 35)], 'J' : [(1, 60)], 'K' : [(1, 80), (2, 150)],
+        'L' :[(1, 90)], 'M' : [(1, 15)], 'N' : [(1, 40), (3, -14)], 'O' : [(1, 10)], 'P' :[(1, 50), (5, 200)], 'Q' : [(1, 30), 3, 80],
+        'R' : [(1, 50), (3, -10)], 'S' : [(1, 30)], 'T' : [(1, 20)], 'U' : [(1, 40) , (3, -5)], 'V' :[(1, 50), (2, 90),(3, 130)],
+        'W' : [(1, 20)], 'X' : [(1, 90)], 'Y' : [(1, 10)], 'Z' :[(1, 50)] }
+
     place = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
     if not isinstance(skus, str) or not skus.isupper():
         return -1
 
     table = collections.Counter(skus)
+    print(sorted(table))
 
     for i in sorted(table)[::-1]:
         if ord(i) not in ascii_check:
@@ -82,7 +87,8 @@ def checkout(skus):
     return result
 
 
-# print(checkout('FFFF'))
+print(checkout('AABBDLKLLCEOOWLLLSLLDJNHGGGG'))
+
 
 
 
