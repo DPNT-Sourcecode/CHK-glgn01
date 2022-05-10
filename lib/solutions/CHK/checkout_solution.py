@@ -12,6 +12,7 @@ import collections
 | C    | 20    |                        |
 | D    | 15    |                        |
 | E    | 40    | 2E get one B free      |
+| F    | 10    | 2F get one F free      |
 +------+-------+------------------------+
 '''
 
@@ -20,14 +21,14 @@ def checkout(skus):
     if skus == '':
         return 0
 
-    ascii_check = range(65, 70)
+    ascii_check = range(65, 71)
 
     result = 0
 
     hashtable = {
-        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40), (2, -4)]
+        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40), (2, -4)], 'F' : [(1, 10), (2, -1)]
     }
-    place = ['A','B','C','D','E']
+    place = ['A','B','C','D','E','F']
 
     if not isinstance(skus, str) or not skus.isupper():
         return -1
@@ -58,6 +59,7 @@ def checkout(skus):
     return result
 
 
-print(checkout('ABCDEABCDE'))
+print(checkout('ABCDEABCDEF'))
+
 
 
