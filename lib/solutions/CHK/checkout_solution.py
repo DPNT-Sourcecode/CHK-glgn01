@@ -35,7 +35,7 @@ def checkout(skus):
             return -1
 
         if i == 'A':
-            print(table[i] % 3)
+            print(divmod(table[i], 3))
 
         # elif == 'B':
         #     pass
@@ -48,12 +48,6 @@ def checkout(skus):
 
 
 print(checkout('AAAABC'))
-
-
-
-
-
-
 
 
 
