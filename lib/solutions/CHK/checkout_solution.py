@@ -98,21 +98,25 @@ def checkout(skus):
 
     if new_event_table:
         result += (new_event_sum // 3) * 45
-        new_event_sum -= (new_event_sum // 3)
+        new_event_sum -= ((new_event_sum // 3) * 3)
 
         for i in new_event_table:
+            print(new_event_sum)
+            if new_event_sum == 0:
+                return result
             cnt, price = hashtable[i][0]
 
-            print(new_event_table[i])
             if new_event_table[i] < new_event_sum:
                 new_event_sum -= new_event_table[i]
                 result += (new_event_table[i] * price)
             else:
                 result += (new_event_sum * price)
+                new_event_sum = 0
 
     return result
 
 print(checkout('FFFXXXXYZZZZZTTSS'))
+
 
 
 
