@@ -40,7 +40,7 @@ def checkout(skus):
         while table[i] > 0:
             print(table)
             for cnt, price in hashtable[i][::-1]:
-                mul, res = divmod(table[i], cnt)
+                mul, res = table[i] // cnt
 
                 if mul > 0:
                     if i == 'E':
@@ -83,3 +83,4 @@ print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
 # - {"method": "checkout", "params": ["AAAAAA"], "id": "CHK_R2_018"}, expected: 250, got: 260
 # - {"method": "checkout", "params": ["AAAAAAA"], "id": "CHK_R2_019"}, expected: 300, got: 310
 #
+
