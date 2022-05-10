@@ -93,8 +93,15 @@ def checkout(skus):
 
                     result += (mul * price)
                     table[i] = table[i] % cnt
-    print(new_event_table)
+
+    if new_event_table:
+        for i, v in new_event_table.items():
+            print(i,v)
+
+
+
     return result
 
 print(checkout('FFFXXXXYZZZZZTTSS'))
+
 
