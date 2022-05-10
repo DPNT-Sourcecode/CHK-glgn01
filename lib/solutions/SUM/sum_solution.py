@@ -8,5 +8,3 @@ def compute(x, y):
     result = x + y
 
     return x + y
-
-
