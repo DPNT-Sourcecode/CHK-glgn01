@@ -25,7 +25,7 @@ def checkout(skus):
     result = 0
 
     hashtable = {
-        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40)]
+        'A':[(1, 50), (3, 130), (5, 200)], 'B': [(1, 30), (2, 45)], 'C': [(1, 20)], 'D': [(1, 15)], 'E': [(1, 40), (2, -4)]
     }
 
     if not isinstance(skus, str) or not skus.isupper():
@@ -38,17 +38,16 @@ def checkout(skus):
             return -1
 
         while table[i] > 0:
-            print(table)
             for cnt, price in hashtable[i][::-1]:
                 mul = table[i] // cnt
 
                 if mul > 0:
-                    if i == 'E':
-                        cal = table['B'] - mul
+                    if price < 0:
+                        cal = table[price] - mul
                         if  cal >= 0:
-                            table['B'] = cal
+                            table[price] = cal
                         else:
-                            table['B'] = 0
+                            table[price] = 0
 
                     result += (mul * price)
                     table[i] = table[i] % cnt
@@ -56,11 +55,12 @@ def checkout(skus):
     return result
 
 
-print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
+print(checkout('ABCDE'))
 
 # - {"method": "checkout", "params": ["AAAAA"], "id": "CHK_R2_017"}, expected: 200, got: 230
 # - {"method": "checkout", "params": ["AAAAAA"], "id": "CHK_R2_018"}, expected: 250, got: 260
 # - {"method": "checkout", "params": ["AAAAAAA"], "id": "CHK_R2_019"}, expected: 300, got: 310
 #
+
 
 
