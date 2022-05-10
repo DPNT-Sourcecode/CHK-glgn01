@@ -15,6 +15,10 @@ import collections
 '''
 
 def checkout(skus):
+
+    if skus == '':
+        return 0
+
     ascii_check = range(65, 69)
 
     result = 0
@@ -52,8 +56,6 @@ def checkout(skus):
             result += (hashtable[i] * table[i])
 
     return result
-
-
 
 
 
