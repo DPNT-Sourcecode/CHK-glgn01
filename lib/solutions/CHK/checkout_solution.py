@@ -63,7 +63,7 @@ def checkout(skus):
 
     table = collections.Counter(skus)
 
-    new_event_targets = {'S','T','X','Y','Z'}
+    new_event_targets = {'Z','S','T','Y','X'}
     new_event_table = collections.defaultdict(dict)
     new_event_sum = 0
 
@@ -100,8 +100,9 @@ def checkout(skus):
         result += (new_event_sum // 3) * 45
         new_event_sum -= ((new_event_sum // 3) * 3)
 
-        for i in new_event_table:
-
+        for i in new_event_targets:
+            if not new_event_table.get(i):
+                continue
             if new_event_sum == 0:
                 return result
             cnt, price = hashtable[i][0]
@@ -118,5 +119,6 @@ def checkout(skus):
  # - {"method":"checkout","params":["ZZZS"],"id":"CHK_R5_144"}, expected: 65, got: 66
  # - {"method":"checkout","params":["STXZ"],"id":"CHK_R5_146"}, expected: 62, got: 66
 # new_event_targets = {'S', 'T', 'X', 'Y', 'Z'}
-# print(checkout('FFFXXXXYZZZZZTTSS'))
+# print(checkout('ZZZS'))
+
 
