@@ -117,7 +117,8 @@ def checkout(skus):
 
     return result
 
-print(checkout('STXS'))
+print(checkout('ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'))
+
 
 
 
