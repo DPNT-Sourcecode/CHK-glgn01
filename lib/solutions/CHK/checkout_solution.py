@@ -63,7 +63,7 @@ def checkout(skus):
 
     table = collections.Counter(skus)
 
-    new_event_targets = ['S','T','Y','Z','X']
+    new_event_targets = ['X','S','T','Y','Z']
     new_event_table = collections.defaultdict(dict)
     new_event_sum = 0
 
@@ -117,7 +117,8 @@ def checkout(skus):
 
     return result
 
-print(checkout('CXYZYZC'))
+print(checkout('STXS'))
+
 
 
 
