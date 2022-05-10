@@ -99,13 +99,16 @@ def checkout(skus):
     if new_event_table:
         result += (new_event_sum // 3) * 45
         new_event_sum -= (new_event_sum // 3)
+
         for i in new_event_table:
-            new_event_sum -= new_event_table[i]
+
+            new_event_sum
 
 
     return result
 
 print(checkout('FFFXXXXYZZZZZTTSS'))
+
 
 
 
