@@ -33,13 +33,9 @@ class TestCHK():
         assert checkout_solution.checkout("BB")==45
         assert checkout_solution.checkout("BBB")== 75
         assert checkout_solution.checkout("BBBB")==90
-        assert checkout_solution.checkout("FF")==10
+        assert checkout_solution.checkout("FF")==20
         assert checkout_solution.checkout("FFF")== 20
-        assert checkout_solution.checkout("FFFF")== 20
-        assert checkout_solution.checkout("FFFFFF")== 30
-        assert checkout_solution.checkout("FFFFFF")== 30
-        assert checkout_solution.checkout("ABCDEFABCDEF")==290
-        assert checkout_solution.checkout("CDFFAECBDEAB")==290
-        assert checkout_solution.checkout("AAAAAEEBAAABBFFF")== 475
-        assert checkout_solution.checkout("FFABCDECBAABCABBAAAEEAAFF")== 685
+        assert checkout_solution.checkout("FFFF")== 30
+        assert checkout_solution.checkout("FFFFFF")== 40
+
 
