@@ -72,8 +72,8 @@ def checkout(skus):
                     if price < 0:
                         cal = table[place[price]] - mul
                         if i == place[price]:
-                            cur = table[i]
-                            cal = table[place[price]] - (cur - cur//cnt) // cnt
+
+                            cal = table[place[price]] - (table[i] // (cnt+1))
 
                         if cal >= 0:
                             table[place[price]] = cal
@@ -88,6 +88,7 @@ def checkout(skus):
     return result
 
 print(checkout('FFFFFF'))
+
 
 
 
