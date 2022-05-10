@@ -19,7 +19,7 @@ def checkout(skus):
     result = 0
 
     hashtable = {
-        'A': 50, 'B': 30, 'C': 20, 'D': 15
+        'A': 50, 'AAA' : 130, 'B': 30, 'BB' : 45, 'C': 20, 'D': 15
     }
 
     if not isinstance(skus, str):
@@ -35,19 +35,27 @@ def checkout(skus):
             return -1
 
         if i == 'A':
-            print(divmod(table[i], 3))
+            mul, res = divmod(table[i], 3)
+            if mul > 0:
+                result += (mul * hashtable[i * 3])
+            if res > 0:
+                result += (res * hashtable[i])
 
-        # elif == 'B':
-        #     pass
-        # else:
-        #     pass
+        elif i == 'B':
+            mul, res = divmod(table[i], 2)
+            if mul > 0:
+                result += (mul * hashtable[i*2])
+            if res > 0:
+                result += (res * hashtable[i])
 
+        else:
+            result += (res * hashtable[i])
 
-
-
+    return result
 
 
 print(checkout('AAAABC'))
+
 
 
 
