@@ -38,5 +38,12 @@ class TestCHK():
         assert checkout_solution.checkout("FFFF")== 30
         assert checkout_solution.checkout("FFFFFF") == 40
         assert checkout_solution.checkout("AABBDLKLLNHGGGGFFFBVVVVV")== 910
+        assert checkout_solution.checkout("UUUUU") == 160
+        assert checkout_solution.checkout("UUUU") == 120
+
+
+
+
+
 
 
