@@ -18,6 +18,10 @@ def checkout(skus):
 
     result = 0
 
+    hashtable = {
+        'A': 50, 'B': 30, 'C': 20, 'D': 15
+    }
+
     if not isinstance(skus, str):
         return -1
 
@@ -30,14 +34,21 @@ def checkout(skus):
             print(ord(i))
             return -1
 
-        print(table[i])
+        if i == 'A':
+            print(table[i] % 3)
+
+        # elif == 'B':
+        #     pass
+        # else:
+        #     pass
 
 
 
 
 
 
-print(checkout('ABC'))
+print(checkout('AAAABC'))
+
 
 
 
