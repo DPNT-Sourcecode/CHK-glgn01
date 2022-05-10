@@ -3,10 +3,10 @@ import collections
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-
+    range()
     if not isinstance(skus, str):
         return -1
-    
+
     if not skus.isupper():
         return -1
 
@@ -14,6 +14,7 @@ def checkout(skus):
     print(table)
 
 print(checkout('AB*'))
+
 
 
 
