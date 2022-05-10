@@ -61,8 +61,7 @@ def checkout(skus):
                 else:
                     table['B'] = 0
 
-            if res > 0:
-                result += (res * hashtable[i])
+            result += (table[i] * hashtable[i])
 
         else:
             result += (hashtable[i] * table[i])
@@ -71,6 +70,7 @@ def checkout(skus):
 
 
 print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
+
 
 
 
