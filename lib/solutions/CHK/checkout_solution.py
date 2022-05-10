@@ -37,24 +37,28 @@ def checkout(skus):
         if ord(i) not in ascii_check:
             return -1
 
-        for cur in hashtable[i][::-1]:
-            print(cur)
+        while table[i] > 0:
+            print(table)
+            for cnt, price in hashtable[i][::-1]:
+                mul, res = divmod(table[i], cnt)
 
+                if mul > 0:
+                    if i == 'E':
+                        cal = table['B'] - mul
+                        if  cal >= 0:
+                            table['B'] = cal
+                        else:
+                            table['B'] = 0
 
-        # if i == 'A':
-        #     mul, res = divmod(table[i], 3)
-        #     if mul > 0:
-        #         result += (mul * hashtable[i * 3])
-        #     if res > 0:
-        #         result += (res * hashtable[i])
-        #
-        # elif i == 'B':
-        #     mul, res = divmod(table[i], 2)
-        #     if mul > 0:
-        #         result += (mul * hashtable[i*2])
-        #     if res > 0:
-        #         result += (res * hashtable[i])
-        #
+                    result += (mul * price)
+
+                else:
+                    if res > 0:
+                        result += (res * price)
+                table[i] = res
+
+        print(result)
+
         # elif i == 'E':
         #     mul, res = divmod(table[i], 2)
         #
@@ -79,6 +83,7 @@ print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
 # - {"method": "checkout", "params": ["AAAAAA"], "id": "CHK_R2_018"}, expected: 250, got: 260
 # - {"method": "checkout", "params": ["AAAAAAA"], "id": "CHK_R2_019"}, expected: 300, got: 310
 #
+
 
 
 
