@@ -13,6 +13,7 @@ import collections
 | D    | 15    |                |
 +------+-------+----------------+
 '''
+
 def checkout(skus):
     ascii_check = range(65, 69)
 
@@ -33,7 +34,7 @@ def checkout(skus):
         if ord(i) not in ascii_check:
             print(ord(i))
             return -1
-
+        print(table)
         if i == 'A':
             mul, res = divmod(table[i], 3)
             if mul > 0:
@@ -49,14 +50,11 @@ def checkout(skus):
                 result += (res * hashtable[i])
 
         else:
-            result += (res * hashtable[i])
+            result += hashtable[i]
 
     return result
 
-
-print(checkout('AAAABC'))
-
-
+print(checkout('AAAAAAABBCCD'))
 
 
 
