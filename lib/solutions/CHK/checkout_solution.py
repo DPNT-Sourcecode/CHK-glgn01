@@ -106,11 +106,16 @@ def checkout(skus):
             print(cal)
             if  cal < 0:
                 new_event_table[i] -= new_event_sum
+                new_event_sum = 0
             else:
-                new_event_table[i] -= cal
+                new_event_sum = cal
+                new_event_table[i] = 0
+
+            if new_event_sum 
 
     return result
 
 print(checkout('FFFXXXXYZZZZZTTSS'))
+
 
 
