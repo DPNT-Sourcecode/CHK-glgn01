@@ -11,6 +11,7 @@ import collections
 | B    | 30    | 2B for 45      |
 | C    | 20    |                |
 | D    | 15    |                |
+E    | 40    | 2E get one B free  
 +------+-------+----------------+
 '''
 
@@ -27,13 +28,12 @@ def checkout(skus):
         'A': 50, 'AAA' : 130, 'B': 30, 'BB' : 45, 'C': 20, 'D': 15, 'E': 40
     }
 
-    if not isinstance(skus, str):
+
+    if not isinstance(skus, str) or not skus.isupper():
         return -1
 
-    if not skus.isupper():
-        return -1
     table = collections.Counter(skus)
-    print(sorted(table)[::-1])
+
     for i in sorted(table)[::-1]:
         if ord(i) not in ascii_check:
             return -1
@@ -52,6 +52,14 @@ def checkout(skus):
             if res > 0:
                 result += (res * hashtable[i])
 
+        elif i == 'E':
+            mul, res = divmod(table[i], 2)
+            if mul > 0:
+                table['B'] -= (mul // 2)
+
+            if res > 0:
+                result += (res * hashtable[i])
+
         else:
             result += (hashtable[i] * table[i])
 
@@ -59,5 +67,6 @@ def checkout(skus):
 
 
 print(checkout('ABCDDEEE'))
+
 
 
