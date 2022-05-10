@@ -87,11 +87,6 @@ def checkout(skus):
 
     return result
 
-# print(checkout('UUUUU'))
-
-
-
-
-
+# print(checkout('PPPPQRUVPQRUVPQRUVSU'))
 
 
