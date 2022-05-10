@@ -111,11 +111,12 @@ def checkout(skus):
                 new_event_sum = cal
                 new_event_table[i] = 0
 
-            if new_event_sum 
+            
 
     return result
 
 print(checkout('FFFXXXXYZZZZZTTSS'))
+
 
 
 
