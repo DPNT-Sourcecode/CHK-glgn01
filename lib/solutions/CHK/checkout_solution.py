@@ -19,12 +19,12 @@ def checkout(skus):
     if skus == '':
         return 0
 
-    ascii_check = range(65, 69)
+    ascii_check = range(65, 70)
 
     result = 0
 
     hashtable = {
-        'A': 50, 'AAA' : 130, 'B': 30, 'BB' : 45, 'C': 20, 'D': 15
+        'A': 50, 'AAA' : 130, 'B': 30, 'BB' : 45, 'C': 20, 'D': 15, 'E': 40
     }
 
     if not isinstance(skus, str):
@@ -33,8 +33,8 @@ def checkout(skus):
     if not skus.isupper():
         return -1
     table = collections.Counter(skus)
-
-    for i in table:
+    print(sorted(table)[::-1])
+    for i in sorted(table)[::-1]:
         if ord(i) not in ascii_check:
             return -1
 
@@ -58,5 +58,6 @@ def checkout(skus):
     return result
 
 
+print(checkout('ABCDDEEE'))
 
 
