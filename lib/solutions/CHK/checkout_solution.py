@@ -65,6 +65,7 @@ def checkout(skus):
 
     new_event_targets = {'S','T','X','Y','Z'}
     new_event_table = collections.defaultdict(dict)
+    new_event_sum = 0
 
     # print(table)
     for i in sorted(table)[::-1]:
@@ -72,6 +73,7 @@ def checkout(skus):
             return -1
         if i in new_event_targets:
             new_event_table[i] = table[i]
+            new_event_sum += table[i]
             table[i] = 0
 
         while table[i] > 0:
@@ -95,13 +97,15 @@ def checkout(skus):
                     table[i] = table[i] % cnt
 
     if new_event_table:
-        for i, v in new_event_table.items():
-            print(i,v)
-
+        result += (new_event_sum // 3) * 45
+        new_event_sum -= (new_event_sum // 3)
+        for i in new_event_table:
+            new_event_sum -= new_event_table[i]
 
 
     return result
 
 print(checkout('FFFXXXXYZZZZZTTSS'))
+
 
 
