@@ -49,18 +49,22 @@ def checkout(skus):
                         else:
                             table[price] = 0
 
+                        continue
+                    print(i)
+
                     result += (mul * price)
                     table[i] = table[i] % cnt
 
     return result
 
 
-print(checkout('ABCDE'))
+print(checkout('ABBBBBBCDDEEEEEEEEEEEE'))
 
 # - {"method": "checkout", "params": ["AAAAA"], "id": "CHK_R2_017"}, expected: 200, got: 230
 # - {"method": "checkout", "params": ["AAAAAA"], "id": "CHK_R2_018"}, expected: 250, got: 260
 # - {"method": "checkout", "params": ["AAAAAAA"], "id": "CHK_R2_019"}, expected: 300, got: 310
 #
+
 
 
 
